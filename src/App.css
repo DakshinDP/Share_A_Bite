@@ -2,22 +2,23 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%; /* Ensure the body takes up the full height of the viewport */
-  
+  overflow: hidden; /* Prevent scrolling */
   background: linear-gradient(to top, #F7DCB9, #DEAC80);
   font-family: Arial, sans-serif; /* Optional: Set a default font */
 }
-
-
 .App {
   text-align: center;
-  min-height: 100vh; /* Ensure the app takes up the full height of the viewport */
+  height: 100vh; /* Ensure the app takes up the full height of the viewport */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
+
+/* App.css */
 .App-button {
-  background-color: #914F1E; /* Light blue background */
+  background-color: #914F1E; /* Original button color */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -32,13 +33,23 @@ html, body {
 }
 
 .App-button:hover {
-  background-color: #DEAC80; /* Darker blue on hover */
+  background-color: #DEAC80; /* Original hover color */
 }
 
+
+/* App.css */
 .home {
   padding: 20px;
+  text-align: center;
 }
 
+.home h2 {
+  margin-bottom: 20px;
+}
+
+.home p {
+  margin-bottom: 20px;
+}
 .donate-form {
   background-color: #DEAC80;
   padding: 20px;
@@ -82,16 +93,21 @@ html, body {
   background-color: #21a1f1;
 }
 
-/* App.css */
+/* Styles for the Receive page */
 .receive-page {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+  height: calc(100vh - 80px); /* Fit within the viewport */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #map {
   width: 150vh; /* Adjust width */
   height: 70vh; /* Adjust height */
-  margin: 20px auto; /* Center the map */
+  margin: 10px auto; /* Center the map */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
@@ -102,4 +118,58 @@ html, body {
     width: 95%; /* Slightly smaller width for smaller screens */
     height: 50vh; /* Smaller height for smaller screens */
   }
+}
+
+
+/* App.css */
+.App-header {
+  background-color: #F7DCB9;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between; /* Align items to the left and right */
+  align-items: center;
+  position: fixed; /* Make the header fixed */
+  top: 0; /* Stick to the top */
+  left: 0; /* Stick to the left */
+  width: 100%; /* Full width */
+  z-index: 1000; /* Ensure the header stays above other content */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.App-header h1 {
+  margin: 0; /* Remove default margin */
+  font-size: 24px; /* Adjust font size */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Add space between links */
+  margin-left: auto; /* Push the nav to the right */
+  margin-right: 20px; /* Add some right margin for spacing */
+}
+
+.nav-link {
+  color: #914F1E;
+  text-decoration: none;
+  font-size: 17px; /* Reduced font size to fit all links */
+  font-weight: bold;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.right-links {
+  display: flex;
+  gap: 10px; /* Add space between Profile and About Us */
+}
+
+/* Add padding to the main content to avoid overlap with the fixed header */
+.main-content {
+  flex: 1; /* Take up remaining space */
+  padding-top: 80px; /* Adjust based on header height */
+  overflow-y: auto; /* Allow scrolling only inside the main content */
+  width: 100%; /* Ensure it takes full width */
 }
